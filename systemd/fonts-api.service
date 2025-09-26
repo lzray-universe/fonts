@@ -1,0 +1,19 @@
+[Unit]
+Description=fonts-api (Fastify) for fonts.lzray.com
+After=network.target
+
+[Service]
+Type=simple
+Environment=NODE_ENV=production
+Environment=DATA_DIR=/data
+Environment=CDN_BASE=https://cdn.fonts.lzray.com
+Environment=CACHE_TTL_MS=10000
+Environment=HOST=127.0.0.1
+Environment=PORT=8787
+WorkingDirectory=/opt/fonts-api
+ExecStart=/usr/bin/node src/server.mjs
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
