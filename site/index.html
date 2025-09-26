@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>fonts.lzray.com — 在线字体库</title>
+  <link rel="preconnect" href="https://cdn.fonts.lzray.com" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>在线字体库</h1>
+    <p>自动扫描 <code>/data/fonts</code>；点击即可复制引用代码或下载对应文件。</p>
+    <div class="search">
+      <input id="q" placeholder="搜索字体名或变体… (e.g., WenKai, bold, 500)" />
+    </div>
+  </header>
+  <main id="app" class="grid"></main>
+
+  <template id="card-tpl">
+    <section class="card">
+      <div class="card-head">
+        <h2 class="family"></h2>
+        <div class="actions">
+          <button class="copy-link">复制 &lt;link&gt;</button>
+          <button class="copy-face">@font-face</button>
+        </div>
+      </div>
+      <div class="variants"></div>
+    </section>
+  </template>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
